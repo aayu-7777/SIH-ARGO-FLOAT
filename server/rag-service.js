@@ -19,14 +19,13 @@ const pool = new Pool({
 });
 
 // Gemini API configuration
-const GEMINI_API_KEY =
-  process.env.GEMINI_API_KEY || "REDACTED_GEMINI_KEY"; // set GEMINI_API_KEY in env
-const GEMINI_MODEL_ID = process.env.GEMINI_MODEL_ID || "gemini-2.5-flash";
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY || ""; // must be provided via env
+const GEMINI_MODEL_ID = process.env.GEMINI_MODEL_ID || "gemini-1.5-flash";
 const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL_ID}:generateContent?key=${GEMINI_API_KEY}`;
 
 // Database schema information for context
 const DB_SCHEMA = `
-Database Schema for Argo Float Data:
+Database Schema for Argo float oceanographic database:
 
 Table: floats
 Columns:
