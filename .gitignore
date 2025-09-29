@@ -1,0 +1,120 @@
+# =============================
+# Global
+# =============================
+.DS_Store
+Thumbs.db
+*.log
+logs/
+*.pid
+*.seed
+*.out
+*.tmp
+.tmp/
+.cache/
+*.swp
+.svn/
+.hg/
+
+# Editor/IDE
+.vscode/
+.idea/
+*.iml
+
+# Environment / credentials
+.env
+.env.*
+!.env.example
+*.env.local
+*.env.development.local
+*.env.test.local
+*.env.production.local
+
+# =============================
+# Node / Frontend
+# =============================
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Build outputs (Vite/React)
+client/dist/
+client/build/
+client/.vite/
+client/.parcel-cache/
+client/.cache/
+
+# Test coverage & reports
+coverage/
+*.lcov
+
+# NPM/Yarn/PNPM
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-store/
+
+# =============================
+# Backend (Node server)
+# =============================
+server/.cache/
+server/dist/
+server/build/
+server/coverage/
+
+# Local databases & dumps
+*.sqlite
+*.db
+*.sql
+*.dump
+
+# =============================
+# Python
+# =============================
+__pycache__/
+*.py[cod]
+*$py.class
+.python-version
+.venv/
+venv/
+.envrc
+
+# Python build
+build/
+dist/
+.eggs/
+*.egg-info/
+*.egg
+
+# Python test/analysis
+.pytest_cache/
+.ipynb_checkpoints/
+.mypy_cache/
+.pyre/
+
+# =============================
+# Project-specific
+# =============================
+# Uploaded NetCDF and large data files
+uploads/
+
+# Local runtime artifacts
+server/*.local.*
+server/*.secret.*
+
+# Analyzer cache
+analyzer/__pycache__/
+
+# MacOS metadata
+.AppleDouble
+.LSOverride
+Icon?
+
+# =============================
+# Misc
+# =============================
+# Lockfiles (optional to ignore if you prefer reproducible installs)
+# Uncomment if you do not want to commit lock files
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
