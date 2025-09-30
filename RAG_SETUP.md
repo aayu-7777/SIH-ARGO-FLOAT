@@ -7,14 +7,16 @@ This guide will help you set up the RAG (Retrieval-Augmented Generation) chatbot
 - 🤖 Natural language queries to your PostgreSQL database
 - 🔍 SQL query generation from user questions
 - 📊 Real-time data visualization in chat
-- 🗣️ Conversational responses using Qwen3 Coder model
+- 🗣️ Conversational responses using Google Gemini AI
 - 🔒 Secure SQL injection protection
-- 📱 Responsive chat interface
+- 📱 Responsive chat interface with modern dark theme
+- 🎨 Glassmorphism UI design
+- ⚡ Optimized performance with React hooks
 
 ## Prerequisites
 
 1. **PostgreSQL Database**: Your Argo float database should be running
-2. **OpenRouter API Key**: Get a free API key from [OpenRouter](https://openrouter.ai/)
+2. **Google Gemini API Key**: Get a free API key from [Google AI Studio](https://makersuite.google.com/app/apikey)
 3. **Node.js**: Version 16 or higher
 
 ## Setup Instructions
@@ -40,8 +42,8 @@ DB_NAME=postgres
 DB_PASS=secret123
 DB_PORT=5432
 
-# OpenRouter API Configuration
-OPENROUTER_API_KEY=your-openrouter-api-key-here
+# Google Gemini API Configuration
+GEMINI_API_KEY=your-google-gemini-api-key-here
 ```
 
 ### 3. Start the RAG Service
@@ -93,15 +95,15 @@ Navigate to `http://localhost:3000/chat` to access the AI chatbot interface.
 Try these sample questions in the chatbot:
 
 1. **"Show me all available floats"**
-2. **"What's the latest location of float 1900816?"**
-3. **"What's the average temperature for float 1900816?"**
-4. **"Show me all measurements from 2023"**
-5. **"What floats are in the Atlantic Ocean?"**
-6. **"Show me the temperature range for all floats"**
-7. **"Which float has the highest salinity measurements?"**
-8. **"Show me data from floats in the Pacific Ocean"**
-9. **"What's the deepest pressure measurement recorded?"**
-10. **"Show me monthly averages for float 1900816"**
+2. **"What's the latest temperature data from 2025?"**
+3. **"Find floats in the Pacific Ocean"**
+4. **"Show salinity profiles for float 1901740"**
+5. **"What's the average depth of measurements in 2025?"**
+6. **"Find floats with the highest temperature readings"**
+7. **"Show me all measurements from 2025"**
+8. **"What's the latest location of float 1901740?"**
+9. **"What's the average temperature for float 1901740?"**
+10. **"Show me monthly averages for float 1901740"**
 
 ## Database Schema
 
@@ -131,9 +133,10 @@ Columns:
 
 ### Common Issues
 
-1. **"OpenRouter API error"**
+1. **"Google Gemini API error"**
    - Check your API key in the `.env` file
-   - Ensure you have credits in your OpenRouter account
+   - Ensure you have credits in your Google AI Studio account
+   - Verify the API key has the correct permissions
 
 2. **"Database connection error"**
    - Verify PostgreSQL is running
@@ -145,6 +148,11 @@ Columns:
 4. **Frontend not loading**
    - Ensure both services are running (RAG service on 5002, React on 3000)
    - Check browser console for CORS errors
+
+5. **"ChatBot not responding"**
+   - Check if the RAG service is running on port 5002
+   - Verify the GEMINI_API_KEY is set correctly
+   - Check server logs for error messages
 
 ### Logs
 
@@ -170,10 +178,15 @@ The chat interface is in `client/src/components/ChatBot.jsx` and styled with `Ch
 
 ### Changing the AI Model
 
-Update the model name in `rag-service.js`:
+Update the model configuration in `rag-service.js`:
 
 ```javascript
-model: "qwen/qwen3-coder:free"  // Change to your preferred model
+// Google Gemini model configuration
+const modelConfig = {
+  model: "gemini-1.5-flash",  // Change to your preferred Gemini model
+  maxTokens: 1000,
+  temperature: 0.1
+};
 ```
 
 ## Support
@@ -186,9 +199,18 @@ For issues or questions:
 
 ## Model Information
 
-- **Model**: Qwen3 Coder 480B A35B (free)
-- **Provider**: OpenRouter
+- **Model**: Google Gemini 1.5 Flash
+- **Provider**: Google AI Studio
 - **Use Case**: SQL generation and natural language responses
-- **Cost**: Free tier available
+- **Cost**: Free tier available with generous limits
+- **Features**: Fast response times, excellent code generation, multilingual support
+
+## Recent Updates
+
+- ✅ **Updated to Google Gemini AI** - Better performance and reliability
+- ✅ **Modern UI Design** - Dark theme with glassmorphism effects
+- ✅ **Updated Sample Queries** - Reflects 2025 data and float 1901740
+- ✅ **Enhanced Error Handling** - Better user experience and debugging
+- ✅ **Performance Optimizations** - React hooks for better responsiveness
 
 
